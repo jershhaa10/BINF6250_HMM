@@ -1,5 +1,5 @@
 # Introduction
-
+Hidden Markov Models (HMMs) contain hidden states that we are trying to infer from observed data. This is useful in bioinformatics, because the observed data is what we can directly measure, like sequenced DNA. On the other hand, the hidden states represent the underlying biological context we are trying to uncover or infer. We will use the Viterbi algorithm, which utilizes dynamic programming to find the optimal paath of hidden stages given a sequence of observations. 
 
 # Pseudocode
 Put pseudocode in this box:
