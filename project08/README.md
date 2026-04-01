@@ -51,7 +51,7 @@ We also got a tip about handling ties and felt like we didn't have enough time t
 This project required an approach I'm not used to. This project required us to keep the class object implementation in the back of our minds, so that the functions would suit the class setup and the class methods and variables would suit the functions. It was also an interesting challenge to create such a generalized implementation to suit any number of states and observations that were fed into it.
 
 ## Other member
-Other members' reflections on the project
+Aaronie Jersha Jenyfred: Building a pipeline from scratch was new and made me understand the number of factors that are put into consideration. Though the algorithm was conceptually manageable, implementation of class structures and overall OOPs programming application was the tricky part for me. Debugging indexing errors and implementing log conversions(math domain errors) without disturbing the flow of the algorithm took a while. Developing a code that supports reproducibility and scalability was also a new experience for me.
 
 ## Other member
 Other members' reflections on the project
