@@ -39,10 +39,12 @@ for observation in predictions:
 ```
 
 # Successes
-Description of the team's learning points
+We had a solid game plan going in and did some solid peer programming. We kept in touch over the week and met several times and tried to make sure all our group members understood code as we went.
 
 # Struggles
-Description of the stumbling blocks the team experienced
+We all feel like we are a bit weaker on implementing custom class objects, so this was a good opportunity to learn but also meant we spent a lot of time figuring out how to configure everything.
+Late on Tuesday we realized that we needed to move our functions inside the class object so we spent a lot of time updating that last minute.
+We also got a tip about handling ties and felt like we didn't have enough time to implement that so we will try to get it in the next project.
 
 # Personal Reflections
 ## Victoria Van Berlo
