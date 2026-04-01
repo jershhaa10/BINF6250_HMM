@@ -1,5 +1,5 @@
 # Introduction
-Description of the project
+
 
 # Pseudocode
 Put pseudocode in this box:
@@ -39,22 +39,20 @@ for observation in predictions:
 ```
 
 # Successes
-We had a solid game plan going in and did some solid peer programming. We kept in touch over the week and met several times and tried to make sure all our group members understood code as we went.
+We had a solid game plan going in and did some solid peer programming. We kept in touch over the week and met several times and tried to make sure all our group members understood code as we went. We were successful in implementing a class-based structure depite limited prior experience in object-oritented programming. Having the members teach Viterbil algorithm to the group also proved effective, as it deeped our collective understanding and directly informed our implemenmtation strategy.
 
 # Struggles
-We all feel like we are a bit weaker on implementing custom class objects, so this was a good opportunity to learn but also meant we spent a lot of time figuring out how to configure everything.
-Late on Tuesday we realized that we needed to move our functions inside the class object so we spent a lot of time updating that last minute.
-We also got a tip about handling ties and felt like we didn't have enough time to implement that so we will try to get it in the next project.
+Although successfull in implementing the class-based structure, we did spend a lot of time figuring out how to implement it. We were also under the impression, the viterbi algorithm should be implemented outside the class, but late on Tuesday, we realized we needed to move the function inside the class object which required time to update rather last minute. Lastly, we received a tip about handling ties in ptential max probabilities. Although they may be rare, they can still happen. We did not have time to implement it during this algorithm, but as this is an ongoing project, we plan to add during our next meeting.
 
 # Personal Reflections
 ## Victoria Van Berlo
 This project required an approach I'm not used to. This project required us to keep the class object implementation in the back of our minds, so that the functions would suit the class setup and the class methods and variables would suit the functions. It was also an interesting challenge to create such a generalized implementation to suit any number of states and observations that were fed into it.
 
-## Other member
-Aaronie Jersha Jenyfred: Building a pipeline from scratch was new and made me understand the number of factors that are put into consideration. Though the algorithm was conceptually manageable, implementation of class structures and overall OOPs programming application was the tricky part for me. Debugging indexing errors and implementing log conversions(math domain errors) without disturbing the flow of the algorithm took a while. Developing a code that supports reproducibility and scalability was also a new experience for me.
+## Aaronie Jersha Jenyfred
+Building a pipeline from scratch was new and made me understand the number of factors that are put into consideration. Though the algorithm was conceptually manageable, implementation of class structures and overall OOPs programming application was the tricky part for me. Debugging indexing errors and implementing log conversions(math domain errors) without disturbing the flow of the algorithm took a while. Developing a code that supports reproducibility and scalability was also a new experience for me.
 
-## Other member
-Other members' reflections on the project
+## Chantera Lazard 
+Initially, we were unsure where to start as we were building from scratch and that was overwhelming, but in re-visiting the lecture, we were able to find an entry point in planning out our implementation. Writing the algorithm seemed straightforward, but implementing a class exposed gaps in my understanding of OOP. I am looking forward to improving my knowledge and implementation as we continue to build on this project. 
 
 # Generative AI Appendix
 Generative AI was not used in this project.
