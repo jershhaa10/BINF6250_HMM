@@ -28,6 +28,7 @@ Overall, this algorithm was conceptually a bit more confusing for me than Viterb
 I was a bit more comfortable this week since we had the class structure figured out by then. The algorithm was comparatively less complicated and implementing Viterbi first really eased the understanding. I also developed a more clearer and practical understanding of what expansion and reusability of class structures mean. Aligning the backward matrix and debugging indexing mismatches also required careful attention.
 
 ## Chantera Lazard 
+The algorithm was easy to implement as building the probability matrix was similar to the same concept seen in Viterbi Matrix. However, understanding the difference between the forward and backward matrices and their necessity was pretty hard to wrap my head around, especially given Viterbi already provides state decoding. I am now understanding that it computes the posterior probability of being in each state at every position independently which will be useful for the last algorithm, Baum-Welch. 
 
 # Generative AI Appendix
 Generative AI was not used in this project.
