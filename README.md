@@ -3,11 +3,79 @@
 This project implements the Forward-Backward class of Hidden Markov Model. The Forward-Backward algorithm calculates the probability of each observed state at each position's probability of belonging to a hidden state. The Forward-Backward algorithm consists of 3 parts: the forward algorithm, which calculates probabilities from left to right, the backward algorithm, which calculates probabilities from right to left, and the combined forward-backward algorithm which uses the matrices created by the forward and backward algorithms to calculate the probability of a position in the observed sequence being assigned a particular hidden state. Our algorithm also calculates the probabilities for the entire matrix, ie, all possible observation position and hidden states.
 
 # Pseudocode
-Put pseudocode in this box:
+Pseudocode for the major functions in our notebook
+
+Note: This is the logic and does not reflect our exact implementation
+
+**Foward_matrix**
 
 ```
-Some pseudocode here
+Initialize numpy array num_states x len(observations)
+
+# Base Case
+for each state:
+    Initialize initial probabilities for each current state by multiplying initial probs by emission probs
+        Add initial probabilities in log space
+
+# Recursion    
+Iterate through each observation
+    Iterate through each state    
+    Calculate joint probabilities in log space
+    Add joing probabilities in log space
+    Add to probability matrix
+
+Return probability matrix
+
 ```
+
+**Backward_matrix**
+
+```
+
+Initialize numpy array num_states x len(observations)
+
+# Base Case
+for each state:
+Initialize initial probabilities for each current state to log(1) = 0 (handled through numpy array init)
+
+# Recursion    
+Iterate through each observation starting from len(observations)-2 to 0 (backwards)
+    Iterate through each state    
+    Calculate joint probabilities in log space
+    Add joint probabilities in log space
+    Add to probability matrix
+    
+Return probability matrix 
+        
+```
+
+**Forward-Backward**
+```
+Initialize numpy array num_states x len(observations)
+Calculate the forward matrix
+Calculate the backward matrix
+Calculate the sequence probability
+
+
+Iterate through each observation 
+    Iterate through each state    
+        Calculate the posterior probability by adding the backward and forward probabilities and subtracting 
+        the sequence probability
+        Store in posterior matrix
+        
+Return posterior matrix 
+```
+
+**Posterior-Decode**
+```
+Initialize empty list for path
+Iterate through each oservation:
+  Get the row index for the maximum posterior probability for each column
+  Append to path
+
+Return path
+```
+
 
 # Successes
 Successful implementation of the Forward-Backward algorithm.
