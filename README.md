@@ -1,6 +1,6 @@
 # BINF6250_HMM
 # Introduction
-Description of the project
+This project implements the Forward-Backward class of Hidden Markov Model. The Forward-Backward algorithm calculates the probability of each observed state at each position's probability of belonging to a hidden state. The Forward-Backward algorithm consists of 3 parts: the forward algorithm, which calculates probabilities from left to right, the backward algorithm, which calculates probabilities from right to left, and the combined forward-backward algorithm which uses the matrices created by the forward and backward algorithms to calculate the probability of a position in the observed sequence being assigned a particular hidden state. Our algorithm also calculates the probabilities for the entire matrix, ie, all possible observation position and hidden states.
 
 # Pseudocode
 Put pseudocode in this box:
@@ -13,6 +13,7 @@ Some pseudocode here
 Successful implementation of the Forward-Backward algorithm.
 Our implementation from Week 1 really came in handy to extend the pipeline.
 Maintained consistency in the class-based structuring. 
+Successfully updated program to make calculations in log-space to avoid underflow.
 
 # Struggles
 Implementing the Backward algorithm was a bit tricky, especially in handling indexing correctly while reversing the observation sequence. 
@@ -20,11 +21,13 @@ Debugging mismatches in probabilities across positions took some time.
 Handling log-space computations and ensuring the correct use of logaddexp also took a while. 
 
 # Personal Reflections
-## Group Leader
-Group leader's reflection on the project
+## Victoria Van Berlo
+Overall, this algorithm was conceptually a bit more confusing for me than Viterbi, but balanced by requiring less coding from the ground up, since we re-used the class object framework. A few times I thought I had it, but then we had to go back and re-do something because it wasn't quite how we thought the first time around, which seems to be a running theme with me through many of these projects!
 
-## Other member
-Aaronie Jersha Jenyfred: I was a bit more comfortable this week since we had the class structure figured out by then. The algorithm was comparatively less complicated and implementing Viterbi first really eased the understanding. I also developed a more clearer and practical understanding of what expansion and reusability of class structures mean. Aligning the backward matrix and debugging indexing mismatches also required careful attention.
+## Aaronie Jersha Jenyfred
+I was a bit more comfortable this week since we had the class structure figured out by then. The algorithm was comparatively less complicated and implementing Viterbi first really eased the understanding. I also developed a more clearer and practical understanding of what expansion and reusability of class structures mean. Aligning the backward matrix and debugging indexing mismatches also required careful attention.
+
+## Chantera Lazard 
 
 # Generative AI Appendix
-As per the syllabus
+Generative AI was not used in this project.
