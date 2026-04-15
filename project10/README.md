@@ -184,10 +184,10 @@ Baum Welch class:
 ```
 
 # Successes
-Description of the team's learning points
+We developed a full-implementation of Baum-Welch algorithm while deepening our understanding of its underlying mechanics, particularly the expectation and normalization step. Along the way, we gained experience with Numpy vectorization, made thoughtful design choices regarding data structures, and were able to incorporate peer's feedback in our design to improve our overall implementation. We were successful in translating complex mathematical concepts into working code.
 
 # Struggles
-Description of the stumbling blocks the team experienced
+Baum Welch was a challenging
 
 # Personal Reflections
 ## Group Leader
@@ -197,5 +197,9 @@ Group leader's reflection on the project
 Aaronie Jersha Jenyfred: 
 I found this week's implementation to be the hardest of the HMM series. I took a very long time to get the conceptual understanding right. And even while pseudocoding, the boundaries between the E step, the accumulation functions, and the normalization kept blurring together. Vectorization of the forward and backward matrices was super hard to understand. Getting the log space and raw probability calculations right was a task. Also, small mistakes in indexing or normalization often led to incorrect probability distributions, which took time to fix. However, this week's pipeline led to an understanding about model training and performance, along with the influential parameters.  
 
+Chantera Lazard:
+This week's implementation was very challenging as we took a long time conceptualizing Baum-Welch (~4-5 meetings), specifically the Expectation step. Also as we made an earlier decision to work with numpy arrays, we chose to learn vectorization along the way so as to not overload our functions with for loops, but with not having used numypy previously, it was also hard to comprehend, specifically understanding broadcasting rules and using `newaxis` to reshape arrays for certain arithmetic operations. Nonetheless, we were able to comprehend the main goal of Baum-Welch, gaining valuable experience in probabalistic modeling. 
+
+
 # Generative AI Appendix
-As per the syllabus
+We used Claude Sonnet 4.6 to ask conceptual questions about Baum-Welch, starting with questions we had concerning external resources we found such as Wikipedia articles, and to validate our own understanding.
