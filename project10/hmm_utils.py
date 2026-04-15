@@ -17,7 +17,6 @@ class HiddenMarkovModel:
         self.transition_probs = transition_probs
         self.emission_probs = emission_probs
         self.seed = seed
-        # Rethink this
         self.nucleotide_map = {"A": 0, "C": 1, "G": 2, "T": 3}
 
     def get_transition_probs(self, state):
@@ -49,7 +48,7 @@ class HiddenMarkovModel:
         if type(observations) != list:
             observations = [observations]
 
-        print(self.states)
+        #print(self.states)
         optimal_path = []
         for observation in observations:
             viterbi_matrix, traceback_matrix = self.build_viterbi_traceback_matrix(observation)
