@@ -184,7 +184,7 @@ Baum Welch class:
 ```
 
 # Successes
-Description of the team's learning points
+We developed a full-implementation of Baum-Welch algorithm while deepening our understanding of its underlying mechanics, particularly the expectation and normalization step. Along the way, we gained experience with Numpy vectorization, made thoughtful design choices regarding data structures, and were able to incorporate peer's feedback in our design to improve our overall implementation. We were successful in translating complex mathematical concepts into working code.
 
 # Struggles
 Baum Welch was a challenging
