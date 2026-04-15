@@ -184,14 +184,15 @@ Baum Welch class:
 ```
 
 # Successes
-We developed a full-implementation of Baum-Welch algorithm while deepening our understanding of its underlying mechanics, particularly the expectation and normalization step. Along the way, we gained experience with Numpy vectorization, made thoughtful design choices regarding data structures, and were able to incorporate peer's feedback in our design to improve our overall implementation. We were successful in translating complex mathematical concepts into working code.
+We developed a full-implementation of Baum-Welch algorithm while deepening our understanding of its underlying mechanics, particularly the expectation and normalization step. Along the way, we gained experience with Numpy vectorization, made thoughtful design choices regarding data structures, and were able to incorporate peer's feedback in our design to improve our overall implementation. We were successful in translating complex mathematical concepts into working code. After finishing the main algorithm, we successfully validated our model using generated training data and comparing to BW estimates.
 
 # Struggles
-Baum Welch was a challenging
+We spent a lot of time trying to understand the algorithm. Once we finally understood it, we had to refactor some of the old functions to work in the new class. We wanted to go back and update some of the older functions to work more properly but just didn't have time.
 
 # Personal Reflections
 ## Group Leader
-Group leader's reflection on the project
+Victoria Van Berlo:
+This project was definitely the hardest conceptually. We spent a lot of meetings just trying to figure out what to do. It seemed like every time I thought I understood something, at the next stage, half of my assumptions about the previous stage were incorrect. The time we spent trying to understand the algorithm did eventually help me to have a clear idea of flow and functions required, so that was at least productive time spent. Understanding when we should be using log space and how to get the vectorization working were real sticking points. When we ran the final test on known-probabilities sequence data and got BW estimates close to the original probabilities, it was a really great feeling. 
 
 ## Other member
 Aaronie Jersha Jenyfred: 
