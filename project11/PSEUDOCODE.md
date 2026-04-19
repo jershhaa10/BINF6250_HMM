@@ -51,3 +51,45 @@ for each sequence:
 
 ```
 
+## Step 4: Estimate Initial Emissions Count
+Rules:
+* Match Cases: Position-specific distributions (Count residues at each position for each sequence in msa)
+  * This is a consensus column
+* Insertion Cases: Compute global aa freq from all training sequences and use background distribution for all $I_i$ states
+  * This is extra residues in between consensus columns
+* Deletion Cases: No emission
+  * This is silence between consensus columns
+* Pseudocounts are applied to avoid zeroes
+
+```
+Input
+* sequences_by_positions
+* state_type
+
+* Return an emissions probability dictionary
+
+# Initialization
+* emit_probs = {}
+* pseudocount = 0.01
+
+# Iteration
+for position in len(state_types):
+    Initialize a counts dictionary with amino acids labels as keys and pseudocounts as values
+    # Match Cases
+    if state_type[pos].startswith("M"):
+        Get position residues = sequences_by_positions[pos]
+        for res in position residues:
+            if res != '-':
+                counts dictionary[res] +=1
+        Calculate total across values in count dictionary
+        emit_probs[state_type[pos]] = {amino acids: count dictionary[amino acids] / total for specific amino acid in alphabet}
+
+    # Insertion case
+    if state_type_pos.startswith("I"):
+        Initialize a background counts dictionary with amino acids labels as keys and pseudocounts as values
+        Iterate through each sequence
+            for each residue in sequence
+                if residue != "-":
+                    Add count to amino acid in background count dictionary
+        Calculate total across values in background count dictionary
+        emit_probs[state_type[pos]] = {amino acids: background count dictionary[amino acids] / total for specific amino acid in alphabet}
