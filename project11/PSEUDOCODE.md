@@ -93,3 +93,28 @@ for position in len(state_types):
                     Add count to amino acid in background count dictionary
         Calculate total across values in background count dictionary
         emit_probs[state_type[pos]] = {amino acids: background count dictionary[amino acids] / total for specific amino acid in alphabet}
+```
+
+## Step 5: Estimate Initial Transitions Count
+**Step A: Define Transition Rules**
+```
+* Input: State, Next State (Example: M1, M2 or M1, D2)
+* Returns Boolean which confirms if current state can transition to next_state
+
+if state == "Begin":
+    return True if next_state is in ["M1", "I0", "D1"]
+if state == "End":
+    return False since pHMM are directed graphs flowing from left to right
+
+n = Get the number for the state  (Example: If M3, n=3)
+
+if state starts with "M" # Match
+    return True if next_state is in [M[n+1], I[[n], D[n+1]]
+if state starts with "I" # Insertion
+    return True if next_state is in [I[n], M[n+1]]
+if state starts with "D" # Deletion
+    return True if next_state is in [M[n+1], D[n+1], End]
+
+
+Else return False
+```
