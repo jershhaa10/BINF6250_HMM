@@ -21,6 +21,8 @@ Iterate through each position:
     else if gap_count > 0.5:
         This is an insertion case
         append I{match_case} to state type list
+
+    return state_type_list, match_case
 ```
 
 ## Step 3: Label Each Sequence
@@ -122,16 +124,16 @@ n = Get the number for the state  (Example: If M3, n=3)
 
 if state starts with "M" # Match
     if n == consensus length:
-            return next_state in ["End"]
+            return next_state in [I[[n], "End"]
     else return True if next_state is in [M[n+1], I[[n], D[n+1]]
 if state starts with "I" # Insertion
     if n == consensus length:
-        return next_state in ["End"]
+        return next_state in [I[[n], "End"]
     else return True if next_state is in [I[n], M[n+1]]
 if state starts with "D" # Deletion
     if n == length:
             return next_state in ["End"]
-    return True if next_state is in [M[n+1], D[n+1], End]
+    return True if next_state is in [M[n+1], D[n+1]
     
 Else return False
 ```
