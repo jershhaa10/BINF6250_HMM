@@ -33,7 +33,7 @@ Return: List of Lists where each list is the labels of the residue for each posi
 # Iteration
 for each sequence:
     match_case = 0
-    sequence_label = Initialize an empty list to hold each sequence by label
+    sequence_label = Initialize "Begin" to hold each sequence by label
     for i, residue in enumerate(sequence):
         if residue is '-' and state_type[i] starts with 'M':
             # This represents a deletion
@@ -46,10 +46,12 @@ for each sequence:
         elif res is in alphabet and state_type[i] starts with "I":
             # This is an insertion
             Append to sequence_label I{match_case}
-
+    sequence_label.append("End")
     Append sequence_label to labeled sequences
 
 ```
+
+
 
 ## Step 4: Estimate Initial Emissions Count
 Rules:
