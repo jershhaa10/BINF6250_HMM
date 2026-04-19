@@ -118,3 +118,16 @@ if state starts with "D" # Deletion
 
 Else return False
 ```
+
+Step B: Build Transition Skeleton
+```
+Input: states, pseudocounts = 0.01
+Return: Dictionary transition_counts skeleton with tuples defining valid transitions (prev_state, next_state) as keys and pseudocounts as values 
+
+transition_counts = {}
+for prev_state in states:
+    for next_state in states:
+        if Transition_Rules(prev_state, next_state) returns True as valid transition states
+            transition_counts(state, next_state) = pseudocount
+return  transition_counts   
+```
