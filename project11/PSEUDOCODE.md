@@ -98,9 +98,19 @@ for position in len(state_types):
 ```
 
 ## Step 5: Estimate Initial Transitions Count
+**Pre Step: Build list of states (once we figure out state types (Step 1))**
+```
+*Input: Consensus length
+*Output: List of states
+states = ["Begin", "I0"]
+for index, range(1, Consensus length + 1):
+  states += [f"M{i}", f"I{i}", f"D{i}"]
+states.append("End")
+```
+
 **Step A: Define Transition Rules**
 ```
-* Input: State, Next State (Example: M1, M2 or M1, D2)
+* Input: State, Next State (Example: M1, M2 or M1, D2), Consensus Length
 * Returns Boolean which confirms if current state can transition to next_state
 
 if state == "Begin":
@@ -111,17 +121,22 @@ if state == "End":
 n = Get the number for the state  (Example: If M3, n=3)
 
 if state starts with "M" # Match
-    return True if next_state is in [M[n+1], I[[n], D[n+1]]
+    if n == consensus length:
+            return next_state in ["End"]
+    else return True if next_state is in [M[n+1], I[[n], D[n+1]]
 if state starts with "I" # Insertion
-    return True if next_state is in [I[n], M[n+1]]
+    if n == consensus length:
+        return next_state in ["End"]
+    else return True if next_state is in [I[n], M[n+1]]
 if state starts with "D" # Deletion
+    if n == length:
+            return next_state in ["End"]
     return True if next_state is in [M[n+1], D[n+1], End]
-
-
+    
 Else return False
 ```
 
-Step B: Build Transition Skeleton
+**Step B: Build Transition Skeleton**
 ```
 Input: states, pseudocounts = 0.01
 Return: Dictionary transition_counts skeleton with tuples defining valid transitions (prev_state, next_state) as keys and pseudocounts as values 
@@ -132,4 +147,38 @@ for prev_state in states:
         if Transition_Rules(prev_state, next_state) returns True as valid transition states
             transition_counts(state, next_state) = pseudocount
 return  transition_counts   
+```
+
+**Step C: Compute Transition Counts**
+```
+Input 
+* Consensus Length, labeled sequences (msa)
+Return
+* Dictionary transition_counts with tuples defining valid transitions (prev_state, next_state) as keys and actual counts as values
+ 
+states = build_states(consensus length)
+Initialize transition counts with transition skeleton
+for seqs in labeled sequences:
+  Index through labeled sequences:
+    transition_counts[(seq[i], seq[i+1] += 1
+```
+
+**Step D: Normalize to Transition Probabilities**
+```
+Input
+* labeled sequences (msa)
+* states
+Return
+* Dictionary of dictionaries transition probs where outer key == prev_state and inner keys are outgoing states, values are transition probs of prev_state -> outgoing state
+
+Get Trans counts dictionary inputting labeled sequences in function
+trans_probs = {}
+
+for state in states
+  if state != 'End'
+    outgoing = {k[1]: v for k, v in trans_counts.items() if k[0] == state}
+  if outgoing: 
+    total = Calculate the total across values for specific state
+    for next_state, count in outgoing.items()
+      trans_probs[state][next_state] = count / total 
 ```
