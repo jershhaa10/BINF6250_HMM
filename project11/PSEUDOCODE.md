@@ -81,7 +81,7 @@ for position in len(state_types):
     if state_type[pos].startswith("M"):
         Get position residues = sequences_by_positions[pos]
         for res in position residues:
-            if res != '-':
+            if res not in ['-', "Begin", "End"]:
                 counts dictionary[res] +=1
         Calculate total across values in count dictionary
         emit_probs[state_type[pos]] = {amino acids: count dictionary[amino acids] / total for specific amino acid in alphabet}
@@ -91,7 +91,7 @@ for position in len(state_types):
         Initialize a background counts dictionary with amino acids labels as keys and pseudocounts as values
         Iterate through each sequence
             for each residue in sequence
-                if residue != "-":
+                if res not in ['-', "Begin", "End"]:
                     Add count to amino acid in background count dictionary
         Calculate total across values in background count dictionary
         emit_probs[state_type[pos]] = {amino acids: background count dictionary[amino acids] / total for specific amino acid in alphabet}
