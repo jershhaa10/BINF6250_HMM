@@ -3,10 +3,8 @@ Profile HMM is a class of Hidden Markov Model designed to identify protein seque
 
 
 # Pseudocode
-Put pseudocode in this box:
 
-```
-## Pseudocode for Step 2: Assign State to Columns
+## Assign State to Columns
 ```
 Input: List of Sequences
 Return: List of State Types
@@ -33,7 +31,7 @@ Iterate through each position:
     return state_type_list, match_case
 ```
 
-## Step 3: Label Each Sequence
+## Label Each Sequence
 ```
 Input: List of sequences, state_types
 Return: List of Lists where each list is the labels of the residue for each position
@@ -61,9 +59,7 @@ for each sequence:
 
 ```
 
-
-
-## Step 4: Estimate Initial Emissions Count
+## Estimate Initial Emissions Count
 Rules:
 * Match Cases: Position-specific distributions (Count residues at each position for each sequence in msa)
   * This is a consensus column
@@ -107,7 +103,7 @@ for position in len(state_types):
         emit_probs[state_type[pos]] = {amino acids: background count dictionary[amino acids] / total for specific amino acid in alphabet}
 ```
 
-## Step 5: Estimate Initial Transitions Count
+## Estimate Initial Transitions Count
 **Pre Step: Build list of states (once we figure out state types (Step 1))**
 ```
 *Input: Consensus length
@@ -173,7 +169,7 @@ for seqs in labeled sequences:
     transition_counts[(seq[i], seq[i+1] += 1
 ```
 
-**Step D: Normalize to Transition Probabilities**
+**Normalize to Transition Probabilities**
 ```
 Input
 * labeled sequences (msa)
@@ -193,7 +189,7 @@ for state in states
       trans_probs[state][next_state] = count / total 
 ```
 
-**viterbi pseudocode**
+## Viterbi
 ```
 input: sequence, trans, emit, states
 return: optimal path
@@ -224,7 +220,7 @@ reverse path
 return path
 ```
 
-**forward, backward, forward backward pseudocode**
+## Forward, Backward, Forward-Backward
 ```
 forward():
 input: sequence, trans, emit, states
@@ -289,7 +285,6 @@ for each i in len(sequence):
 
 return posterior, path
 ```
-```
 
 # Successes
 Our team met many times over the week and each time we moved forward a bit more in understanding. Each time we met we focused on a specific part of the algorithm which helped us focus in on specific areas we needed more work on.
@@ -315,6 +310,8 @@ This was conceptually the hardest algorithm by far. The lack of clear guidelines
 
 ## Other member
 Aaronie Jersha Jenyfred: The algorithm was conceptually hard to understand. I couldn't comprehend the transition from HMM to profile HMM. I also was uncertain about how viterbi and posterior decoding translates to the states assigned for profile HMM. Focusing on the pseudocode helped me to get the concepts right. A major point of confusion for me was separating model position vs sequence position, since in profile HMMs they don’t always move together.I also realized that small implementation details like indexing and state transitions can completely break the logic, which made me pay more attention to the structure of the algorithm.
+Chantera Lazard-
+I am grateful to my teammates for meeting up multiple times so we can reason through profileHMM. I think our goal was to write just pseudocode for this algorithm as sometimes it is more challenging to think through an algorithm compared to implementing it. I think this was one of our major successes out of the HMM suite where we just conceptualized algorithmically. We still wrote code as sometimes it is easier to write code before writing pseudocode, but we would write our ideas down in plain English or draw out ideas using *drawio* and then code so we can provide a more suitable pseudocode. profileHMM was easier for me to conceptualize because our resources did a good job in framing out the differences between a standard HMM vs a profileHMM. I did struggle with how viterbi and forward algorithms related to the profileHMM, but we reasoned that they were the algorithms used to test our trained data (estimated transition and emission probabilities). 
 
 # Generative AI Appendix
 Claude was consulted for a considerable amount of the conceptual understanding of profile HMM rules.
