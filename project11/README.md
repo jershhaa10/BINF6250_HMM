@@ -314,7 +314,7 @@ Victoria Van Berlo -
 This was conceptually the hardest algorithm by far. The lack of clear guidelines for the project required a lot of research even outside the given resources, and I had to do a lot of back and forth. It seemed like some of the given resources conflicted with other resources' guidelines for how pHMMs work and so that was a considerable amount of confusion.
 
 ## Other member
-Other members' reflections on the project
+Aaronie Jersha Jenyfred: The algorithm was conceptually hard to understand. I couldn't comprehend the transition from HMM to profile HMM. I also was uncertain about how viterbi and posterior decoding translates to the states assigned for profile HMM. Focusing on the pseudocode helped me to get the concepts right. A major point of confusion for me was separating model position vs sequence position, since in profile HMMs they don’t always move together.I also realized that small implementation details like indexing and state transitions can completely break the logic, which made me pay more attention to the structure of the algorithm.
 
 # Generative AI Appendix
 Claude was consulted for a considerable amount of the conceptual understanding of profile HMM rules.
